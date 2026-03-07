@@ -32,7 +32,7 @@ const PROJECTS = [
     id: 2,
     title: "Portfolio Website",
     description:
-      "A mobile-first portfolio website with interactive elements and optimized performance across all devices.",
+      "A mobile-first portfolio website with interactive elements and optimized performance across all devices including a light and darkmode toggle option.",
     tech: ["REACT"],
     image: "images/port.jpg",
     live: "https://portfolio-demo-rosy-ten.vercel.app/",
