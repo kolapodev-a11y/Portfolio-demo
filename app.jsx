@@ -56,7 +56,7 @@ const PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript"],
     image: "images/blog.jpg",
     live: "https://kpzblogwebsite.netlify.app/",
-    github: "#",
+    github: "https://github.com/victorkolapo84-code/My-Blog-site",
   },
   {
     id: 5,
