@@ -517,21 +517,41 @@ function Contact() {
     e.preventDefault();
     setSending(true);
     try {
-      // EmailJS integration — same keys as the original site
-      emailjs.init({ publicKey: "Gkisq4GSHGj4nx1rh" });
-      await emailjs.send("service_id", "template_id", {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
+      // Resend (server-side) via Vercel Serverless Function: /api/contact
+      // NOTE: This won't work on file:// (open index.html directly). Use Live Server or deploy to Vercel.
+      const resp = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        }),
       });
+
+      if (!resp.ok) {
+        // Try to surface a useful error message from the API
+        let msg = "Failed to send message.";
+        try {
+          const data = await resp.json();
+          if (data?.error) msg = data.error;
+        } catch (e) {}
+        throw new Error(msg);
+      }
+
       setToast({ message: "Message sent! I'll get back to you soon. 🎉", type: "success" });
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       // Fallback: open mailto
-      window.location.href = `mailto:kolapodev@gmail.com?subject=Message from ${encodeURIComponent(
-        form.name
+      const fallbackEmail = "kolapodev@gmail.com";
+      window.location.href = `mailto:${fallbackEmail}?subject=${encodeURIComponent(
+        `Message from ${form.name}`
       )}&body=${encodeURIComponent(form.message)}`;
-      setToast({ message: "Opening email client as fallback...", type: "success" });
+
+      setToast({
+        message: "Couldn't send automatically — opening email client as fallback...",
+        type: "error",
+      });
     } finally {
       setSending(false);
     }
