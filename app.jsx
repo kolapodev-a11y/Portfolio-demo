@@ -46,7 +46,7 @@ const PROJECTS = [
     tech: ["HTML", "CSS", "JavaScript", "Node.js (Express)", "MongoDB", "Payment Integration"],
     image: "images/ecomm.jpg",
     live: "https://fortunehub.name.ng",
-    github: "https://www.linkedin.com/in/kolapo-ofobutu-b68892382",
+    github: "#",
   },
   {
     id: 4,
