@@ -3,35 +3,414 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kolapo Victor | Web Developer</title>
-
-  <!-- Helps browsers render form controls correctly in both themes -->
+  <title>Kolapo Victor | Fullstack Web Developer | Peezutech</title>
+  <meta name="description" content="Peezutech portfolio website for Kolapo Victor, a fullstack web developer building fast, responsive websites and modern web applications." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#2563eb" />
   <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://www.peezutech.name.ng/" />
 
-  <!-- Prevent theme "flash" on load -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kolapo Victor | Fullstack Web Developer" />
+  <meta property="og:description" content="Explore projects, skills, and contact details for Kolapo Victor, a fullstack web developer at Peezutech." />
+  <meta property="og:url" content="https://www.peezutech.name.ng/" />
+  <meta property="og:site_name" content="Peezutech Portfolio" />
+  <meta property="og:image" content="https://www.peezutech.name.ng/images/optimized/port.webp" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kolapo Victor | Fullstack Web Developer" />
+  <meta name="twitter:description" content="Portfolio website for Kolapo Victor showcasing projects, skills, and contact details." />
+  <meta name="twitter:image" content="https://www.peezutech.name.ng/images/optimized/port.webp" />
+
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" />
+
   <script>
     (function () {
       try {
-        const saved = localStorage.getItem("theme");
-        const theme = saved || "light"; // default LIGHT to solve "too dark"
-        document.documentElement.setAttribute("data-theme", theme);
-      } catch (e) {}
+        var saved = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', saved || 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
     })();
   </script>
 
-  <!-- React + ReactDOM + Babel (NO npm needed) -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-  <!-- Contact form is handled by Resend via /api/contact (Vercel serverless function) -->
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Kolapo Victor",
+      "jobTitle": "Fullstack Web Developer",
+      "url": "https://www.peezutech.name.ng/",
+      "email": "mailto:kolapodev@gmail.com",
+      "sameAs": [
+        "https://github.com/kolapodev-a11y",
+        "https://www.linkedin.com/in/kolapo-ofobutu-b68892382",
+        "https://wa.me/2349050911921"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Peezutech"
+      }
+    }
+  </script>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="text/babel" src="app.jsx"></script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="navbar" aria-label="Primary">
+    <div class="nav-container">
+      <a class="nav-logo" href="#home" data-scroll>&lt;Peezutech /&gt;</a>
+
+      <ul class="nav-links">
+        <li><a href="#home" data-scroll class="active">Home</a></li>
+        <li><a href="#about" data-scroll>About</a></li>
+        <li><a href="#projects" data-scroll>Projects</a></li>
+        <li><a href="#contact" data-scroll>Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta" data-scroll>Hire Me</a>
+        </li>
+        <li class="nav-theme">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode" type="button">
+            <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+            <span class="theme-toggle-text">Light</span>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-top">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode" type="button">
+        <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+        <span class="theme-toggle-text">Light</span>
+      </button>
+    </div>
+
+    <a href="#home" data-scroll>Home</a>
+    <a href="#about" data-scroll>About</a>
+    <a href="#projects" data-scroll>Projects</a>
+    <a href="#contact" data-scroll>Contact</a>
+    <a href="#contact" class="mobile-hire" data-scroll>Hire Me →</a>
+  </div>
+
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid-bg"></div>
+      <div class="hero-container">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Available for new projects
+          </div>
+
+          <h1 class="hero-title">
+            Hello, I'm <span class="name">Kolapo Victor</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            <span id="typed-text">Fullstack Web Developer</span>
+            <span class="typed-cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            I create beautiful, responsive websites and web applications that bring ideas to life —
+            with clean code and modern design.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary" data-scroll>🚀 View My Work</a>
+            <a href="#contact" class="btn-secondary" data-scroll>💬 Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="profile-ring">
+            <div class="profile-inner">👨‍💻</div>
+            <div class="floating-badge badge-1">⚛️ <strong>React</strong></div>
+            <div class="floating-badge badge-2">🟢 <strong>Node.js</strong></div>
+            <div class="floating-badge badge-3">🌐 <strong>Fullstack</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="section-header reveal">
+        <div class="section-tag">Who I Am</div>
+        <h2 class="section-title">About <span>Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-block reveal">
+          <p>
+            I'm a <strong>passionate web developer</strong> with hands-on experience building modern,
+            responsive websites and full-stack web applications. I love turning complex problems into
+            simple, beautiful designs.
+          </p>
+          <p>
+            From crafting pixel-perfect UIs with <strong>React</strong>, HTML and CSS, to building robust
+            backends with <strong>Node.js &amp; MongoDB/SQL</strong> — I handle the full development cycle
+            with attention to performance and user experience.
+          </p>
+          <p>
+            When I'm not coding, I'm learning new technologies and pushing the boundaries of what's
+            possible on the web.
+          </p>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">7+</span>
+              <span class="stat-label">Skills Mastered</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-block reveal">
+          <h3>🛠 Tech Stack &amp; Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-item"><span class="skill-icon">🌐</span><div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🎨</span><div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">⚡</span><div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-level">Advanced</span></div></div>
+            <div class="skill-item"><span class="skill-icon">⚛️</span><div class="skill-info"><span class="skill-name">React</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🟢</span><div class="skill-info"><span class="skill-name">Node.js</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">📱</span><div class="skill-info"><span class="skill-name">Responsive Design</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🗄️</span><div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🛢️</span><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="projects-container">
+        <div class="section-header reveal">
+          <div class="section-tag">My Work</div>
+          <h2 class="section-title">Featured <span>Projects</span></h2>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/land.webp" alt="Landing Page Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Landing Page Website</h3>
+              <p>A responsive business landing page website built with React, featuring modern design and smooth animations.</p>
+              <div class="tech-tags"><span class="tech-tag">React</span></div>
+              <div class="project-links-row">
+                <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/port.webp" alt="Portfolio Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Portfolio Website</h3>
+              <p>A mobile-first portfolio website with interactive elements and optimized performance across all devices including a light and dark mode toggle option.</p>
+              <div class="tech-tags"><span class="tech-tag">React</span></div>
+              <div class="project-links-row">
+                <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/ecomm.webp" alt="E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>E-commerce Website</h3>
+              <p>A fully functional e-commerce platform with product browsing, cart management, a streamlined checkout experience, and SEO optimization.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Payments</span>
+              </div>
+              <div class="project-links-row">
+                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/blog.webp" alt="Blog Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Blog Website</h3>
+              <p>A responsive blog website built with HTML, CSS, and JavaScript, featuring modern design and smooth navigation.</p>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+              <div class="project-links-row">
+                <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/quiz.webp" alt="Quiz Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Quiz Website</h3>
+              <p>An interactive quiz application designed to test knowledge with various categories and instant feedback.</p>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span></div>
+              <div class="project-links-row">
+                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-header reveal">
+        <div class="section-tag">Say Hello</div>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info reveal">
+          <h3>Let's Work Together 🤝</h3>
+          <p>
+            I'm always interested in new opportunities and exciting projects. Whether you have a
+            question, a project in mind, or just want to say hi — feel free to reach out!
+          </p>
+
+          <div class="contact-methods">
+            <a href="mailto:kolapodev@gmail.com" class="contact-method">
+              <div class="contact-method-icon">📧</div>
+              <div class="contact-method-text"><strong>Email</strong><span>kolapodev@gmail.com</span></div>
+            </a>
+            <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">💬</div>
+              <div class="contact-method-text"><strong>WhatsApp</strong><span>Chat with me on WhatsApp</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/kolapo-ofobutu-b68892382" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">💼</div>
+              <div class="contact-method-text"><strong>LinkedIn</strong><span>View LinkedIn Profile</span></div>
+            </a>
+            <a href="https://github.com/kolapodev-a11y" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">🌐</div>
+              <div class="contact-method-text"><strong>GitHub</strong><span>View GitHub Profile</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+          <h3>Send a Message 💌</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="e.g. John Doe" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="e.g. john@example.com" autocomplete="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="form-submit-btn">🚀 Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <a class="footer-logo" href="#home" data-scroll>&lt;Peezutech /&gt;</a>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#home" data-scroll>Home</a>
+          <a href="#about" data-scroll>About</a>
+          <a href="#projects" data-scroll>Projects</a>
+          <a href="#contact" data-scroll>Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © <span id="current-year"></span> Portfolio by
+          <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer"> Peezutech</a>.
+          Built for speed, accessibility, and modern UX.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" type="button" hidden>↑</button>
+  <div id="toast" class="toast success" hidden><span id="toast-icon">✅</span><span id="toast-message"></span></div>
+
+  <noscript>
+    <div style="padding:1rem; text-align:center; background:#fee2e2; color:#7f1d1d; font-weight:700;">
+      This portfolio works best with JavaScript enabled.
+    </div>
+  </noscript>
+
+  <script defer src="app.js"></script>
 </body>
 </html>
