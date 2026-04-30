@@ -18,14 +18,14 @@
   const contactForm = $('#contact-form');
   const submitButton = $('#form-submit-btn');
   const navAnchors = $$('a[href^="#"]');
-  const primaryNavAnchors = $$('a[href^="#home"], a[href^="#about"], a[href^="#projects"], a[href^="#contact"]')
+  const primaryNavAnchors = $$('a[href^="#home"], a[href^="#about"], a[href^="#projects"], a[href^="#resume"], a[href^="#contact"]')
     .filter((node) => node.closest('.nav-links, .mobile-menu, .footer-links'));
 
   const typedWords = [
-    'Fullstack Web Developer',
+    'Junior Full-Stack Developer',
     'React Developer',
-    'UI/UX Enthusiast',
-    'Problem Solver'
+    'Frontend-Focused Builder',
+    'Node.js Web Developer'
   ];
 
   let typedWordIndex = 0;
@@ -110,7 +110,7 @@
 
   function updateScrollUI() {
     const y = window.scrollY || window.pageYOffset;
-    if (navbar) navbar.classList.toggle('scrolled', y > 50);
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
     if (backToTop) backToTop.hidden = y <= 500;
     ticking = false;
   }
@@ -133,7 +133,7 @@
         window.setTimeout(startTypedText, 1500);
         return;
       }
-      window.setTimeout(startTypedText, 80);
+      window.setTimeout(startTypedText, 70);
       return;
     }
 
@@ -145,7 +145,7 @@
       window.setTimeout(startTypedText, 250);
       return;
     }
-    window.setTimeout(startTypedText, 40);
+    window.setTimeout(startTypedText, 35);
   }
 
   function initRevealObserver() {
@@ -184,7 +184,7 @@
           }
         });
       },
-      { threshold: 0.45, rootMargin: '-20% 0px -35% 0px' }
+      { threshold: 0.42, rootMargin: '-20% 0px -35% 0px' }
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -230,8 +230,8 @@
         contactForm.reset();
         showToast("Message sent! I'll get back to you soon. 🎉", 'success');
       } catch (error) {
-        const subject = encodeURIComponent(`Message from ${payload.name}`);
-        const bodyText = encodeURIComponent(payload.message);
+        const subject = encodeURIComponent(`Portfolio inquiry from ${payload.name}`);
+        const bodyText = encodeURIComponent(payload.message + `\n\nReply to: ${payload.email}`);
         window.location.href = `mailto:kolapodev@gmail.com?subject=${subject}&body=${bodyText}`;
         showToast("Couldn't send automatically — opening your email app instead.", 'error');
       } finally {
@@ -272,7 +272,7 @@
 
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) closeMenu();
+      if (window.innerWidth > 860) closeMenu();
     }, { passive: true });
   }
 
