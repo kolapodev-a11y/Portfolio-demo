@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kolapo Victor | Frontend &amp; Full-Stack Web Developer | React, Node.js, JavaScript Portfolio</title>
+  <meta name="description" content="Kolapo Victor is a frontend and full-stack web developer building responsive websites and modern web applications with React, JavaScript, Node.js, Express, MongoDB, HTML, CSS, and SQL." />
+  <meta name="keywords" content="Kolapo Victor, Peezutech, frontend developer, full-stack web developer, React developer, JavaScript developer, Node.js developer, Express, MongoDB, SQL, HTML, CSS, responsive web design, accessibility, web portfolio" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://www.peezutech.name.ng/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kolapo Victor | Frontend &amp; Full-Stack Web Developer" />
+  <meta property="og:description" content="Recruiter-friendly portfolio for Kolapo Victor featuring React, JavaScript, Node.js, MongoDB, responsive UI work, and full-stack product projects." />
+  <meta property="og:url" content="https://www.peezutech.name.ng/" />
+  <meta property="og:site_name" content="Peezutech Portfolio" />
+  <meta property="og:image" content="https://www.peezutech.name.ng/images/optimized/port.webp" />
+  <meta property="og:image:alt" content="Kolapo Victor portfolio preview" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kolapo Victor | Frontend &amp; Full-Stack Web Developer" />
+  <meta name="twitter:description" content="Portfolio website for Kolapo Victor showcasing recruiter-ready projects, skills, and contact details." />
+  <meta name="twitter:image" content="https://www.peezutech.name.ng/images/optimized/port.webp" />
+
+  <link rel="preload" href="style.css" as="style" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .hero-summary-list,
+    .quick-list,
+    .project-highlights {
+      margin: 1rem 0 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .hero-summary-list li,
+    .quick-list li,
+    .project-highlights li {
+      line-height: 1.6;
+    }
+
+    .hero-keywords,
+    .recruiter-tags,
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .hero-keywords span,
+    .recruiter-tags span,
+    .priority-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      background: rgba(37, 99, 235, 0.09);
+      color: inherit;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .snapshot {
+      padding: 2rem 1.25rem 0;
+    }
+
+    .snapshot-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .snapshot-card,
+    .recruiter-note {
+      background: rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    [data-theme="dark"] .snapshot-card,
+    [data-theme="dark"] .recruiter-note {
+      background: rgba(148, 163, 184, 0.08);
+      border-color: rgba(148, 163, 184, 0.18);
+      box-shadow: none;
+    }
+
+    .snapshot-card h3,
+    .recruiter-note h3,
+    .project-body h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .snapshot-card p,
+    .recruiter-note p,
+    .project-body p,
+    .section-copy {
+      line-height: 1.7;
+    }
+
+    .recruiter-note {
+      margin-top: 1.25rem;
+    }
+
+    .projects-priority-copy {
+      max-width: 900px;
+      margin: 0.75rem auto 0;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-body .priority-badge {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .contact-lead {
+      margin-top: 0.75rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .snapshot {
+        padding-top: 1rem;
+      }
+    }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        document.documentElement.setAttribute('data-theme', saved || 'light');
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Kolapo Victor",
+          "jobTitle": "Frontend and Full-Stack Web Developer",
+          "description": "Frontend and full-stack web developer specializing in React, JavaScript, Node.js, Express, MongoDB, HTML, CSS, SQL, responsive web design, accessibility, and product-focused web experiences.",
+          "url": "https://www.peezutech.name.ng/",
+          "email": "mailto:kolapodev@gmail.com",
+          "sameAs": [
+            "https://github.com/kolapodev-a11y",
+            "https://www.linkedin.com/in/kolapo-ofobutu-b68892382",
+            "https://wa.me/2349050911921"
+          ],
+          "knowsAbout": [
+            "React",
+            "JavaScript",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "SQL",
+            "HTML5",
+            "CSS3",
+            "Responsive Web Design",
+            "Web Accessibility"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Peezutech"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Prioritized Portfolio Projects",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "PeezuHub",
+                "applicationCategory": "Marketplace Web Application",
+                "url": "https://peezuhub.name.ng",
+                "codeRepository": "https://github.com/kolapodev-a11y/PeezuHub_New/tree/main",
+                "description": "Full-stack marketplace application built with React, Vite, Node.js, Express, and MongoDB with authentication, Google sign-in, listings, messaging, notifications, uploads, and payments."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Landing Page Website",
+                "applicationCategory": "Marketing Website",
+                "url": "https://landing-page-demo-mu-six.vercel.app/",
+                "codeRepository": "https://github.com/victorkolapo84-code/Landing-page-demo",
+                "description": "Conversion-focused SaaS landing page built with React and Vite, featuring responsive UI, visual hierarchy, and call-to-action flows."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Quiz Website",
+                "applicationCategory": "Education Web Application",
+                "url": "https://koleepeezuquiz.name.ng",
+                "description": "Interactive JavaScript quiz application with timed sessions, multi-subject modes, and exam simulation flows."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "E-commerce Website",
+                "applicationCategory": "E-commerce Website",
+                "url": "https://fortunehub.name.ng",
+                "description": "Responsive storefront experience for electronics with category organization, featured products, and shopping-oriented UI design."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Portfolio Website",
+                "applicationCategory": "Developer Portfolio",
+                "url": "https://portfolio-demo-rosy-ten.vercel.app/",
+                "codeRepository": "https://github.com/kolapodev-a11y/Portfolio-demo/tree/main",
+                "description": "Accessible portfolio website with semantic HTML, responsive layout, theme switching, and smooth navigation."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": "Blog Website",
+                "applicationCategory": "Content Website",
+                "url": "https://kpzblogwebsite.netlify.app/",
+                "codeRepository": "https://github.com/victorkolapo84-code/My-Blog-site",
+                "description": "Content-focused blog interface with card-based layouts, lightweight interactions, and readable article presentation."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav class="navbar" aria-label="Primary">
+    <div class="nav-container">
+      <a class="nav-logo" href="#home" data-scroll>&lt;Peezutech /&gt;</a>
+
+      <ul class="nav-links">
+        <li><a href="#home" data-scroll class="active">Home</a></li>
+        <li><a href="#snapshot" data-scroll>Highlights</a></li>
+        <li><a href="#about" data-scroll>About</a></li>
+        <li><a href="#projects" data-scroll>Projects</a></li>
+        <li><a href="#contact" data-scroll>Contact</a></li>
+        <li>
+          <a href="#contact" class="nav-cta" data-scroll>Hire Me</a>
+        </li>
+        <li class="nav-theme">
+          <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode" type="button">
+            <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+            <span class="theme-toggle-text">Light</span>
+          </button>
+        </li>
+      </ul>
+
+      <button class="hamburger" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-top">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode" title="Dark mode" type="button">
+        <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+        <span class="theme-toggle-text">Light</span>
+      </button>
+    </div>
+
+    <a href="#home" data-scroll>Home</a>
+    <a href="#snapshot" data-scroll>Highlights</a>
+    <a href="#about" data-scroll>About</a>
+    <a href="#projects" data-scroll>Projects</a>
+    <a href="#contact" data-scroll>Contact</a>
+    <a href="#contact" class="mobile-hire" data-scroll>Hire Me →</a>
+  </div>
+
+  <main id="main-content">
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid-bg"></div>
+      <div class="hero-container">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            Available for frontend and full-stack web development opportunities
+          </div>
+
+          <h1 class="hero-title">
+            Hello, I'm <span class="name">Kolapo Victor</span>
+          </h1>
+
+          <h2 class="hero-subtitle">
+            <span id="typed-text">Frontend &amp; Full-Stack Web Developer</span>
+            <span class="typed-cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            I build responsive, accessible, and recruiter-ready web products with <strong>React</strong>,
+            <strong>JavaScript</strong>, <strong>Node.js</strong>, <strong>Express</strong>,
+            <strong>MongoDB</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>SQL</strong>.
+            My work combines clean UI, product thinking, and practical full-stack execution.
+          </p>
+
+          <ul class="hero-summary-list" aria-label="Professional highlights">
+            <li>Built live projects covering full-stack marketplace workflows, marketing pages, e-commerce UI, and interactive education products.</li>
+            <li>Strong in semantic HTML, responsive web design, accessibility, and modern frontend implementation.</li>
+            <li>Comfortable shipping both polished user interfaces and backend-powered application features.</li>
+          </ul>
+
+          <div class="hero-keywords" aria-label="Core keyword highlights">
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>Node.js</span>
+            <span>MongoDB</span>
+            <span>Responsive UI</span>
+            <span>Accessibility</span>
+          </div>
+
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary" data-scroll>🚀 View Prioritized Projects</a>
+            <a href="/cdn-cgi/l/email-protection#03686c6f62736c67667543646e626a6f2d606c6e" class="btn-secondary">💬 Email Me</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="profile-ring">
+            <div class="profile-inner">👨‍💻</div>
+            <div class="floating-badge badge-1">⚛️ <strong>React</strong></div>
+            <div class="floating-badge badge-2">🟢 <strong>Node.js</strong></div>
+            <div class="floating-badge badge-3">🌐 <strong>Fullstack</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span>Scroll down</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <section id="snapshot" class="snapshot" aria-labelledby="snapshot-title">
+      <div class="section-header reveal">
+        <div class="section-tag">Recruiter Snapshot</div>
+        <h2 id="snapshot-title" class="section-title">Why I’m a <span>Strong Hire</span></h2>
+        <p class="section-copy">
+          This portfolio is structured for recruiters and hiring managers to quickly see role fit,
+          technical strengths, and the projects that best represent delivery ability.
+        </p>
+      </div>
+
+      <div class="snapshot-grid">
+        <article class="snapshot-card reveal">
+          <h3>Target Roles</h3>
+          <p>Frontend Developer, React Developer, JavaScript Developer, and Full-Stack Web Developer roles.</p>
+        </article>
+
+        <article class="snapshot-card reveal">
+          <h3>Core Stack</h3>
+          <p>React, Vite, JavaScript, HTML5, CSS3, Node.js, Express, MongoDB, SQL, responsive design, and accessibility.</p>
+        </article>
+
+        <article class="snapshot-card reveal">
+          <h3>What I Build</h3>
+          <p>Marketing websites, portfolios, e-commerce interfaces, learning applications, and full-stack marketplace products.</p>
+        </article>
+      </div>
+
+      <div class="projects-container recruiter-note reveal">
+        <h3>ATS &amp; recruiter improvements included in this version</h3>
+        <div class="recruiter-tags" aria-label="Portfolio improvement tags">
+          <span>Keyword-rich summary</span>
+          <span>Semantic structure</span>
+          <span>Visible role alignment</span>
+          <span>Prioritized projects</span>
+          <span>Structured data</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="section-header reveal">
+        <div class="section-tag">Who I Am</div>
+        <h2 class="section-title">About <span>Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-block reveal">
+          <p>
+            I'm a <strong>web developer</strong> focused on building modern, responsive, and usable digital
+            experiences. I enjoy turning product ideas into clean interfaces and dependable web solutions.
+          </p>
+          <p>
+            My frontend work emphasizes <strong>semantic HTML</strong>, <strong>accessible UI</strong>,
+            <strong>responsive layouts</strong>, and polished interactions. On the backend, I build with
+            <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB/SQL</strong> to support
+            real application features and workflows.
+          </p>
+          <p>
+            I’m especially interested in opportunities where I can contribute to product development,
+            collaborate with teams, and continue growing as a frontend or full-stack engineer.
+          </p>
+
+          <h3>Core Competencies</h3>
+          <ul class="quick-list" aria-label="Core competencies">
+            <li>Frontend development with React, JavaScript, HTML5, CSS3, and responsive UI systems</li>
+            <li>Full-stack implementation with Node.js, Express, MongoDB, authentication, and API integration</li>
+            <li>Accessibility, performance-minded development, and recruiter-friendly product presentation</li>
+          </ul>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <span class="stat-number">6+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">7+</span>
+              <span class="stat-label">Skills Mastered</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-block reveal">
+          <h3>🛠 Tech Stack &amp; Skills</h3>
+          <div class="skills-grid">
+            <div class="skill-item"><span class="skill-icon">🌐</span><div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🎨</span><div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">⚡</span><div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-level">Advanced</span></div></div>
+            <div class="skill-item"><span class="skill-icon">⚛️</span><div class="skill-info"><span class="skill-name">React</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🟢</span><div class="skill-info"><span class="skill-name">Node.js</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">📱</span><div class="skill-info"><span class="skill-name">Responsive Design</span><span class="skill-level">Expert</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🗄️</span><div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-level">Intermediate</span></div></div>
+            <div class="skill-item"><span class="skill-icon">🛢️</span><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sr-only">
+        ATS keywords: Frontend Developer, Full-Stack Developer, React Developer, JavaScript Developer,
+        Node.js Developer, Express, MongoDB, SQL, HTML5, CSS3, responsive web design, accessibility,
+        semantic HTML, web application development, portfolio projects, recruiter friendly portfolio.
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="projects-container">
+        <div class="section-header reveal">
+          <div class="section-tag">Selected Work</div>
+          <h2 class="section-title">Projects Ordered by <span>Recruiter Priority</span></h2>
+          <p class="section-copy">
+            These projects are now arranged by technical depth, relevance to hiring decisions,
+            visible product execution, and strength of the stack demonstrated.
+          </p>
+          <p class="projects-priority-copy">
+            Highest priority goes to projects that best show full-stack complexity, business relevance,
+            interactive functionality, and the ability to ship user-facing products.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/peezuhub.webp" alt="PeezuHub marketplace project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">🖥 Frontend</a>
+                  <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">🛠 Backend</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#1 Flagship Full-Stack Product</span>
+              </div>
+              <h3>PeezuHub</h3>
+              <p>
+                A full-stack Nigerian marketplace web application built with <strong>React</strong>,
+                <strong>Vite</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and
+                <strong>MongoDB</strong>. It includes authentication, Google sign-in, listing management,
+                search and browsing by state/category, messaging, notifications, image uploads, and premium payment workflows.
+              </p>
+              <ul class="project-highlights" aria-label="PeezuHub highlights">
+                <li>Best example of end-to-end product thinking and full-stack ownership</li>
+                <li>Demonstrates real user flows, backend integration, and scalable feature planning</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Payments</span></div>
+              <div class="project-links-row">
+                <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub live demo">🌐 Live Demo ↗</a>
+                <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub frontend code">👨‍💻 Frontend Code ↗</a>
+                <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub backend code">⚙️ Backend Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/land.webp" alt="Landing Page Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#2 Strong Frontend Showcase</span>
+              </div>
+              <h3>Landing Page Website</h3>
+              <p>
+                A conversion-focused SaaS landing page built with <strong>React</strong> and <strong>Vite</strong>.
+                This project highlights component-based UI development, polished visual hierarchy, responsive sections,
+                and call-to-action flow designed for product marketing and user conversion.
+              </p>
+              <ul class="project-highlights" aria-label="Landing Page Website highlights">
+                <li>Demonstrates modern frontend execution with business-facing design goals</li>
+                <li>Strong signal for product, startup, and marketing-focused web teams</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">Responsive UI</span><span class="tech-tag">Product Marketing</span></div>
+              <div class="project-links-row">
+                <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/quiz.webp" alt="Quiz Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#3 Interactive App Logic</span>
+              </div>
+              <h3>Quiz Website</h3>
+              <p>
+                An interactive exam practice web application built with <strong>HTML</strong>, <strong>CSS</strong>,
+                and <strong>JavaScript</strong>. It supports multi-subject and single-subject modes, timed sessions,
+                score-based interaction, and JAMB-style simulation flows for focused learning.
+              </p>
+              <ul class="project-highlights" aria-label="Quiz Website highlights">
+                <li>Shows application logic, state handling, and user-focused front-end interactions</li>
+                <li>Highlights ability to build functional learning products beyond static pages</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">EdTech</span></div>
+              <div class="project-links-row">
+                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/ecomm.webp" alt="E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#4 Commercial UI Build</span>
+              </div>
+              <h3>E-commerce Website</h3>
+              <p>
+                A responsive electronics storefront designed to organize products by category, highlight featured items,
+                and guide users through a clean browsing experience. This project reflects product merchandising awareness,
+                responsive layout skills, and conversion-conscious interface design.
+              </p>
+              <ul class="project-highlights" aria-label="E-commerce Website highlights">
+                <li>Relevant to business teams looking for commerce-oriented frontend execution</li>
+                <li>Useful evidence of layout structure, browsing UX, and product presentation</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive UI</span></div>
+              <div class="project-links-row">
+                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/port.webp" alt="Portfolio Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#5 Personal Brand &amp; Accessibility</span>
+              </div>
+              <h3>Portfolio Website</h3>
+              <p>
+                A personal portfolio website built to present projects, skills, and contact pathways with semantic structure,
+                accessible navigation, theme switching, smooth scrolling, and mobile-first performance.
+              </p>
+              <ul class="project-highlights" aria-label="Portfolio Website highlights">
+                <li>Shows presentation skill, accessibility thinking, and content organization</li>
+                <li>Best used as supporting evidence after higher-impact product projects</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Accessibility</span></div>
+              <div class="project-links-row">
+                <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
+              <img src="images/optimized/blog.webp" alt="Blog Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="priority-badge">#6 Content Platform Example</span>
+              </div>
+              <h3>Blog Website</h3>
+              <p>
+                A content-driven blog interface featuring structured article cards, readable layouts,
+                and lightweight front-end interactions. It supports strong visual organization and simple,
+                fast reading experiences.
+              </p>
+              <ul class="project-highlights" aria-label="Blog Website highlights">
+                <li>Useful supporting project for content UI and layout presentation</li>
+                <li>Lower hiring priority because it shows less technical depth than the projects above</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Content UI</span></div>
+              <div class="project-links-row">
+                <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-header reveal">
+        <div class="section-tag">Say Hello</div>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <p class="contact-lead">
+          Recruiters, hiring managers, and clients can reach me directly for frontend and full-stack web development opportunities.
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info reveal">
+          <h3>Let's Work Together 🤝</h3>
+          <p>
+            I'm interested in opportunities where I can contribute to web products, collaborate with teams,
+            and keep growing through meaningful frontend and full-stack work.
+          </p>
+
+          <div class="contact-methods">
+            <a href="/cdn-cgi/l/email-protection#3a5155565b4a555e5f4c7a5d575b535614595557" class="contact-method">
+              <div class="contact-method-icon">📧</div>
+              <div class="contact-method-text"><strong>Email</strong><span><span class="__cf_email__" data-cfemail="ed8682818c9d8289889bad8a808c8481c38e8280">[email&#160;protected]</span></span></div>
+            </a>
+            <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">💬</div>
+              <div class="contact-method-text"><strong>WhatsApp</strong><span>Chat with me on WhatsApp</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/kolapo-ofobutu-b68892382" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">💼</div>
+              <div class="contact-method-text"><strong>LinkedIn</strong><span>View LinkedIn Profile</span></div>
+            </a>
+            <a href="https://github.com/kolapodev-a11y" target="_blank" rel="noopener noreferrer" class="contact-method">
+              <div class="contact-method-icon">🌐</div>
+              <div class="contact-method-text"><strong>GitHub</strong><span>View GitHub Profile</span></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-card reveal">
+          <h3>Send a Message 💌</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" type="text" placeholder="e.g. John Doe" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input id="email" name="email" type="email" placeholder="e.g. john@example.com" autocomplete="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your role, project, or hiring need..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="form-submit-btn">🚀 Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-top">
+        <a class="footer-logo" href="#home" data-scroll>&lt;Peezutech /&gt;</a>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="#home" data-scroll>Home</a>
+          <a href="#snapshot" data-scroll>Highlights</a>
+          <a href="#about" data-scroll>About</a>
+          <a href="#projects" data-scroll>Projects</a>
+          <a href="#contact" data-scroll>Contact</a>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © <span id="current-year"></span> Portfolio by
+          <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer"> Peezutech</a>.
+          Built for speed, accessibility, ATS keyword clarity, and recruiter-friendly review.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top" type="button" hidden>↑</button>
+  <div id="toast" class="toast success" hidden><span id="toast-icon">✅</span><span id="toast-message"></span></div>
+
+  <noscript>
+    <div style="padding:1rem; text-align:center; background:#fee2e2; color:#7f1d1d; font-weight:700;">
+      This portfolio works best with JavaScript enabled.
+    </div>
+  </noscript>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
