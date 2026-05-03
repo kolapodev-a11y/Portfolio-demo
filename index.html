@@ -124,6 +124,62 @@
       html[data-theme='dark'] .section-tag {
         @apply border-brand-500/30 bg-brand-500/10 text-brand-100;
       }
+
+      .tw-skill-card {
+        @apply flex items-center gap-4 rounded-[1.75rem] border border-slate-200/80 bg-white/90 p-4 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl;
+      }
+
+      html[data-theme='dark'] .tw-skill-card {
+        @apply border-slate-700/80 bg-slate-900/80 shadow-none hover:border-brand-500/40;
+      }
+
+      .tw-skill-icon {
+        @apply flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-100 via-white to-violet-100 text-2xl shadow-sm;
+      }
+
+      html[data-theme='dark'] .tw-skill-icon {
+        @apply from-brand-500/20 via-slate-900 to-violet-500/20;
+      }
+
+      .tw-skill-level {
+        @apply mt-2 inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-700;
+      }
+
+      html[data-theme='dark'] .tw-skill-level {
+        @apply border-brand-500/30 bg-brand-500/10 text-brand-100;
+      }
+
+      .tw-project-card {
+        @apply group overflow-hidden rounded-[2rem] border border-slate-200/80 bg-white/90 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-2xl;
+      }
+
+      html[data-theme='dark'] .tw-project-card {
+        @apply border-slate-700/80 bg-slate-900/80 shadow-none hover:border-brand-500/40;
+      }
+
+      .tw-project-overlay {
+        @apply pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent opacity-0 transition duration-300 group-hover:opacity-100;
+      }
+
+      .tw-overlay-link {
+        @apply pointer-events-auto inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/20;
+      }
+
+      .tw-project-link {
+        @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:text-brand-700;
+      }
+
+      html[data-theme='dark'] .tw-project-link {
+        @apply border-slate-700 bg-slate-950/70 text-slate-100 hover:border-brand-500 hover:text-white;
+      }
+
+      .tw-project-link--disabled {
+        @apply cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400 hover:translate-y-0 hover:border-slate-200 hover:text-slate-400;
+      }
+
+      html[data-theme='dark'] .tw-project-link--disabled {
+        @apply border-slate-800 bg-slate-900/60 text-slate-500 hover:border-slate-800 hover:text-slate-500;
+      }
     }
   </style>
 
@@ -330,7 +386,7 @@
                 "applicationCategory": "Marketplace Web Application",
                 "url": "https://peezuhub.name.ng",
                 "codeRepository": "https://github.com/kolapodev-a11y/PeezuHub_New/tree/main",
-                "description": "Full-stack marketplace application built with React + Tailwind CSS, Vite, Node.js, Express, and MongoDB with authentication, Google sign-in, listings, messaging, notifications, uploads, and payments."
+                "description": "Full-stack marketplace application built with React, Tailwind CSS, Vite, Node.js, Express, and MongoDB with authentication, Google sign-in, listings, messaging, notifications, uploads, and payments."
               }
             },
             {
@@ -353,7 +409,7 @@
                 "applicationCategory": "Marketing Website",
                 "url": "https://landing-page-demo-mu-six.vercel.app/",
                 "codeRepository": "https://github.com/victorkolapo84-code/Landing-page-demo",
-                "description": "Conversion-focused SaaS landing page built with React and Vite, featuring responsive UI, visual hierarchy, and call-to-action flows."
+                "description": "Conversion-focused SaaS landing page built with React, Tailwind CSS, and Vite, featuring responsive UI, visual hierarchy, and call-to-action flows."
               }
             },
             {
@@ -376,7 +432,7 @@
                 "applicationCategory": "Developer Portfolio",
                 "url": "https://portfolio-demo-rosy-ten.vercel.app/",
                 "codeRepository": "https://github.com/kolapodev-a11y/Portfolio-demo/tree/main",
-                "description": "Accessible portfolio website with semantic HTML, responsive layout, theme switching, and smooth navigation."
+                "description": "Accessible portfolio website refreshed with Tailwind CSS-powered skills and projects sections, semantic HTML, responsive layout, theme switching, and smooth navigation."
               }
             },
             {
@@ -533,7 +589,7 @@
 
         <article class="snapshot-card reveal">
           <h3>Core Stack</h3>
-          <p>React, Vite, JavaScript, HTML5, CSS3, Node.js, Express, MongoDB, SQL, responsive design, and accessibility.</p>
+          <p>React, Vite, JavaScript, HTML5, Tailwind CSS, CSS3, Node.js, Express, MongoDB, SQL, responsive design, and accessibility.</p>
         </article>
 
         <article class="snapshot-card reveal">
@@ -568,7 +624,7 @@
 
           <h3>Core Competencies</h3>
           <ul class="quick-list" aria-label="Core competencies">
-            <li>Frontend development with React, JavaScript, HTML5, CSS3, and responsive UI systems</li>
+            <li>Frontend development with React, JavaScript, HTML5, Tailwind CSS, CSS3, and responsive UI systems</li>
             <li>Full-stack implementation with Node.js, Express, MongoDB, authentication, and API integration</li>
             <li>Accessibility, performance-minded development, and clear product presentation</li>
           </ul>
@@ -583,23 +639,85 @@
               <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat-card">
-              <span class="stat-number">7+</span>
+              <span class="stat-number">9+</span>
               <span class="stat-label">Skills Mastered</span>
             </div>
           </div>
         </div>
 
-        <div class="skills-block reveal">
-          <h3>🛠 Tech Stack &amp; Skills</h3>
-          <div class="skills-grid">
-            <div class="skill-item"><span class="skill-icon">🌐</span><div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-level">Expert</span></div></div>
-            <div class="skill-item"><span class="skill-icon">🎨</span><div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-level">Expert</span></div></div>
-            <div class="skill-item"><span class="skill-icon">⚡</span><div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-level">Advanced</span></div></div>
-            <div class="skill-item"><span class="skill-icon">⚛️</span><div class="skill-info"><span class="skill-name">React</span><span class="skill-level">Intermediate</span></div></div>
-            <div class="skill-item"><span class="skill-icon">🟢</span><div class="skill-info"><span class="skill-name">Node.js</span><span class="skill-level">Intermediate</span></div></div>
-            <div class="skill-item"><span class="skill-icon">📱</span><div class="skill-info"><span class="skill-name">Responsive Design</span><span class="skill-level">Expert</span></div></div>
-            <div class="skill-item"><span class="skill-icon">🗄️</span><div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-level">Intermediate</span></div></div>
-            <div class="skill-item"><span class="skill-icon">🛢️</span><div class="skill-info"><span class="skill-name">SQL</span><span class="skill-level">Intermediate</span></div></div>
+        <div class="reveal rounded-[2rem] border border-slate-200/80 bg-white/90 p-6 shadow-soft backdrop-blur-sm dark:border-slate-700/80 dark:bg-slate-900/80 md:p-8">
+          <div class="flex flex-col gap-4">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">🛠 Tech Stack &amp; Skills</h3>
+              <span class="inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-brand-700 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-100">Tailwind-ready portfolio</span>
+            </div>
+            <p class="text-sm leading-7 text-slate-600 dark:text-slate-300">Tailwind CSS is now represented in my portfolio stack and highlighted in the projects where I actively used it, including PeezuHub, the landing page, and this portfolio refresh.</p>
+          </div>
+
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">🌐</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">HTML5</span>
+                <span class="tw-skill-level">Expert</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">🎨</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">CSS3</span>
+                <span class="tw-skill-level">Expert</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">💨</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">Tailwind CSS</span>
+                <span class="tw-skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">⚡</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">JavaScript</span>
+                <span class="tw-skill-level">Advanced</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">⚛️</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">React</span>
+                <span class="tw-skill-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">🟢</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">Node.js</span>
+                <span class="tw-skill-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">📱</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">Responsive Design</span>
+                <span class="tw-skill-level">Expert</span>
+              </div>
+            </div>
+            <div class="tw-skill-card">
+              <span class="tw-skill-icon">🗄️</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">MongoDB</span>
+                <span class="tw-skill-level">Intermediate</span>
+              </div>
+            </div>
+            <div class="tw-skill-card sm:col-span-2">
+              <span class="tw-skill-icon">🛢️</span>
+              <div>
+                <span class="block text-lg font-semibold text-slate-900 dark:text-slate-100">SQL</span>
+                <span class="tw-skill-level">Intermediate</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -613,7 +731,7 @@
           </p>
           <ul class="recruiter-checklist" aria-label="Recruiter summary points">
             <li><strong>Best evidence:</strong> live marketplace and e-commerce work with real product flows</li>
-            <li><strong>Frontend strengths:</strong> React, JavaScript, responsive layouts, semantic HTML, polished UI</li>
+            <li><strong>Frontend strengths:</strong> React, Tailwind CSS, JavaScript, responsive layouts, semantic HTML, polished UI</li>
             <li><strong>Full-stack strengths:</strong> Node.js, Express, MongoDB, authentication, messaging, and workflow-driven features</li>
           </ul>
           <div class="recruiter-tags" aria-label="Recruiter quick tags">
@@ -632,7 +750,7 @@
       <h2>Target Roles</h2>
       <p>Frontend Developer, Full-Stack Web Developer, React Developer, JavaScript Developer.</p>
       <h2>Technical Skills</h2>
-      <p>React, Vite, JavaScript, HTML5, CSS3, Node.js, Express, MongoDB, SQL, responsive web design, accessibility, semantic HTML, product UI, API integration.</p>
+      <p>React, Vite, JavaScript, HTML5, Tailwind CSS, CSS3, Node.js, Express, MongoDB, SQL, responsive web design, accessibility, semantic HTML, product UI, API integration.</p>
       <h2>Priority Projects</h2>
       <p>PeezuHub full-stack marketplace, Fortunehub's Hub e-commerce website, Landing Page Website, Quiz Website, Portfolio Website, Blog Website.</p>
       <h2>Contact</h2>
@@ -652,204 +770,219 @@
           </p>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/peezuhub.webp" alt="PeezuHub marketplace project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">🖥 Frontend</a>
-                  <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">🛠 Backend</a>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/peezuhub.webp" alt="PeezuHub marketplace project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🖥 Frontend</a>
+                  <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🛠 Backend</a>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 1</span>
                 <span class="priority-badge">Full-Stack Marketplace</span>
+                <span class="priority-badge">Tailwind CSS</span>
               </div>
-              <h3>PeezuHub</h3>
-              <p>
-                A full-stack Nigerian marketplace web application built with <strong>React</strong>,
-                <strong>Vite</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and
-                <strong>MongoDB</strong>. It includes authentication, Google sign-in, listing management,
-                search and browsing by state and category, messaging, notifications, image uploads, and premium payment workflows.
-              </p>
-              <ul class="project-highlights" aria-label="PeezuHub highlights">
-                <li>Best example of end-to-end product thinking and full-stack ownership</li>
-                <li>Demonstrates real user flows, backend integration, and scalable feature planning</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">PeezuHub</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  A full-stack Nigerian marketplace web application built with <strong>React</strong>,
+                  <strong>Tailwind CSS</strong>, <strong>Vite</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and
+                  <strong>MongoDB</strong>. It includes authentication, Google sign-in, listing management,
+                  search and browsing by state and category, messaging, notifications, image uploads, and premium payment workflows.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="PeezuHub highlights">
+                <li class="list-disc">Best example of end-to-end product thinking and full-stack ownership</li>
+                <li class="list-disc">Demonstrates real user flows, backend integration, and scalable feature planning</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Payments</span></div>
-              <div class="project-links-row">
-                <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub live demo">🌐 Live Demo ↗</a>
-                <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub frontend code">👨‍💻 Frontend Code ↗</a>
-                <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View PeezuHub backend code">⚙️ Backend Code ↗</a>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vite</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Payments</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://peezuhub.name.ng" target="_blank" rel="noopener noreferrer" class="tw-project-link" aria-label="View PeezuHub live demo">🌐 Live Demo ↗</a>
+                <a href="https://github.com/kolapodev-a11y/PeezuHub_New/tree/main" target="_blank" rel="noopener noreferrer" class="tw-project-link" aria-label="View PeezuHub frontend code">👨‍💻 Frontend Code ↗</a>
+                <a href="https://github.com/kolapodev-a11y/Peezuhub-backend/tree/main" target="_blank" rel="noopener noreferrer" class="tw-project-link" aria-label="View PeezuHub backend code">⚙️ Backend Code ↗</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/ecomm.webp" alt="Fortunehub's Hub E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/ecomm.webp" alt="Fortunehub's Hub E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <span class="tw-overlay-link cursor-not-allowed border-white/10 bg-white/5 text-white/60">🔒 Private Repo</span>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 2</span>
                 <span class="priority-badge">Full-Stack E-commerce</span>
               </div>
-              <h3>Fortunehub's Hub E-commerce Website</h3>
-              <p>
-                Built a full-stack e-commerce platform for the Nigerian market using <strong>HTML</strong>,
-                <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>.
-                It includes manual payment verification, receipt upload handling, admin approval workflows,
-                automated email notifications with Resend, SEO optimization, and responsive mobile-first design.
-              </p>
-              <ul class="project-highlights" aria-label="Fortunehub highlights">
-                <li>Shows business-focused product thinking with payment and admin workflow support</li>
-                <li>Strong proof of practical frontend and backend execution for commerce use cases</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Fortunehub's Hub E-commerce Website</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  Built a full-stack e-commerce platform for the Nigerian market using <strong>HTML</strong>,
+                  <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>.
+                  It includes manual payment verification, receipt upload handling, admin approval workflows,
+                  automated email notifications with Resend, SEO optimization, and responsive mobile-first design.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="Fortunehub highlights">
+                <li class="list-disc">Shows business-focused product thinking with payment and admin workflow support</li>
+                <li class="list-disc">Strong proof of practical frontend and backend execution for commerce use cases</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">E-commerce</span></div>
-              <div class="project-links-row">
-                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">E-commerce</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="tw-project-link">🌐 Live Demo ↗</a>
+                <span class="tw-project-link tw-project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/land.webp" alt="Landing Page Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/land.webp" alt="Landing Page Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">💻 GitHub</a>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 3</span>
                 <span class="priority-badge">Frontend Marketing Site</span>
+                <span class="priority-badge">Tailwind CSS</span>
               </div>
-              <h3>Landing Page Website</h3>
-              <p>
-                A conversion-focused SaaS landing page built with <strong>React</strong> and <strong>Vite</strong>.
-                This project highlights component-based UI development, polished visual hierarchy, responsive sections,
-                and call-to-action flow designed for product marketing and user conversion.
-              </p>
-              <ul class="project-highlights" aria-label="Landing Page Website highlights">
-                <li>Demonstrates modern frontend execution with business-facing design goals</li>
-                <li>Strong signal for product, startup, and marketing-focused web teams</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Landing Page Website</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  A conversion-focused SaaS landing page built with <strong>React</strong>, <strong>Tailwind CSS</strong>,
+                  and <strong>Vite</strong>. This project highlights component-based UI development, polished visual hierarchy,
+                  responsive sections, and call-to-action flow designed for product marketing and user conversion.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="Landing Page Website highlights">
+                <li class="list-disc">Demonstrates modern frontend execution with business-facing design goals</li>
+                <li class="list-disc">Strong signal for product, startup, and marketing-focused web teams</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">React</span><span class="tech-tag">Vite</span><span class="tech-tag">Responsive UI</span><span class="tech-tag">Product Marketing</span></div>
-              <div class="project-links-row">
-                <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">React</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vite</span><span class="tech-tag">Responsive UI</span><span class="tech-tag">Product Marketing</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://landing-page-demo-mu-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/Landing-page-demo" target="_blank" rel="noopener noreferrer" class="tw-project-link">👨‍💻 View Code ↗</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/quiz.webp" alt="Quiz Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/quiz.webp" alt="Quiz Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <span class="tw-overlay-link cursor-not-allowed border-white/10 bg-white/5 text-white/60">🔒 Private Repo</span>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 4</span>
                 <span class="priority-badge">Interactive Learning App</span>
               </div>
-              <h3>Quiz Website</h3>
-              <p>
-                An interactive exam practice web application built with <strong>HTML</strong>, <strong>CSS</strong>,
-                and <strong>JavaScript</strong>. It supports multi-subject and single-subject modes, timed sessions,
-                score-based interaction, and JAMB-style simulation flows for focused learning.
-              </p>
-              <ul class="project-highlights" aria-label="Quiz Website highlights">
-                <li>Shows application logic, state handling, and user-focused front-end interactions</li>
-                <li>Highlights ability to build functional learning products beyond static pages</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Quiz Website</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  An interactive exam practice web application built with <strong>HTML</strong>, <strong>CSS</strong>,
+                  and <strong>JavaScript</strong>. It supports multi-subject and single-subject modes, timed sessions,
+                  score-based interaction, and JAMB-style simulation flows for focused learning.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="Quiz Website highlights">
+                <li class="list-disc">Shows application logic, state handling, and user-focused front-end interactions</li>
+                <li class="list-disc">Highlights ability to build functional learning products beyond static pages</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">EdTech</span></div>
-              <div class="project-links-row">
-                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">EdTech</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="tw-project-link">🌐 Live Demo ↗</a>
+                <span class="tw-project-link tw-project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/port.webp" alt="Portfolio Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/port.webp" alt="Portfolio Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">💻 GitHub</a>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 5</span>
                 <span class="priority-badge">Portfolio &amp; Accessibility</span>
+                <span class="priority-badge">Tailwind CSS</span>
               </div>
-              <h3>Portfolio Website</h3>
-              <p>
-                A personal portfolio website built to present projects, skills, and contact pathways with semantic structure,
-                accessible navigation, theme switching, smooth scrolling, and mobile-first performance.
-              </p>
-              <ul class="project-highlights" aria-label="Portfolio Website highlights">
-                <li>Shows presentation skill, accessibility thinking, and content organization</li>
-                <li>Best used as supporting evidence after higher-impact product projects</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Portfolio Website</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  A personal portfolio website refreshed with <strong>Tailwind CSS</strong> for the skills and projects experience,
+                  while preserving semantic structure, accessible navigation, theme switching, smooth scrolling, and mobile-first performance.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="Portfolio Website highlights">
+                <li class="list-disc">Shows presentation skill, accessibility thinking, and content organization</li>
+                <li class="list-disc">Now gives direct evidence of Tailwind CSS integration alongside product-focused UI work</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Accessibility</span></div>
-              <div class="project-links-row">
-                <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">HTML</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Accessibility</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://portfolio-demo-rosy-ten.vercel.app/" target="_blank" rel="noopener noreferrer" class="tw-project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/kolapodev-a11y/Portfolio-demo/tree/main" target="_blank" rel="noopener noreferrer" class="tw-project-link">👨‍💻 View Code ↗</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/blog.webp" alt="Blog Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="overlay-btn github">💻 GitHub</a>
+          <article class="tw-project-card reveal">
+            <div class="relative overflow-hidden">
+              <img class="aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-105" src="images/optimized/blog.webp" alt="Blog Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="tw-project-overlay">
+                <div class="flex flex-wrap gap-3 p-5">
+                  <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">🔗 Live Demo</a>
+                  <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="tw-overlay-link">💻 GitHub</a>
                 </div>
               </div>
             </div>
-            <div class="project-body">
-              <div class="project-meta">
+            <div class="space-y-6 p-6 md:p-8">
+              <div class="flex flex-wrap gap-3">
                 <span class="project-rank">Priority 6</span>
                 <span class="priority-badge">Content Platform</span>
               </div>
-              <h3>Blog Website</h3>
-              <p>
-                A content-driven blog interface featuring structured article cards, readable layouts,
-                and lightweight front-end interactions. It supports strong visual organization and simple,
-                fast reading experiences.
-              </p>
-              <ul class="project-highlights" aria-label="Blog Website highlights">
-                <li>Useful supporting project for content UI and layout presentation</li>
-                <li>Shows content UI structure, readability, and lightweight front-end interaction</li>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Blog Website</h3>
+                <p class="leading-7 text-slate-600 dark:text-slate-300">
+                  A content-driven blog interface featuring structured article cards, readable layouts,
+                  and lightweight front-end interactions. It supports strong visual organization and simple,
+                  fast reading experiences.
+                </p>
+              </div>
+              <ul class="grid gap-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300" aria-label="Blog Website highlights">
+                <li class="list-disc">Useful supporting project for content UI and layout presentation</li>
+                <li class="list-disc">Shows content UI structure, readability, and lightweight front-end interaction</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Content UI</span></div>
-              <div class="project-links-row">
-                <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="project-link">👨‍💻 View Code ↗</a>
+              <div class="flex flex-wrap gap-3"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Content UI</span></div>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://kpzblogwebsite.netlify.app/" target="_blank" rel="noopener noreferrer" class="tw-project-link">🌐 Live Demo ↗</a>
+                <a href="https://github.com/victorkolapo84-code/My-Blog-site" target="_blank" rel="noopener noreferrer" class="tw-project-link">👨‍💻 View Code ↗</a>
               </div>
             </div>
           </article>
@@ -952,6 +1085,7 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="app.js"></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
