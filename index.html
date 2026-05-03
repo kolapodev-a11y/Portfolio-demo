@@ -28,6 +28,104 @@
 
   <link rel="preload" href="style.css" as="style" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+            },
+          },
+          boxShadow: {
+            soft: '0 20px 45px rgba(15, 23, 42, 0.10)',
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-slate-50 text-slate-900 antialiased;
+      }
+
+      html[data-theme='dark'] body {
+        @apply bg-slate-950 text-slate-100;
+      }
+    }
+
+    @layer components {
+      .nav-logo,
+      .footer-logo,
+      .section-title span {
+        @apply bg-gradient-to-r from-brand-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent;
+      }
+
+      .nav-cta,
+      .btn-primary,
+      .form-submit-btn {
+        @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-600 to-violet-600 px-5 py-3 font-semibold text-white shadow-soft transition duration-300 hover:-translate-y-0.5 hover:shadow-lg;
+      }
+
+      .btn-secondary {
+        @apply inline-flex items-center justify-center rounded-full border border-brand-200 bg-white/85 px-5 py-3 font-semibold text-slate-700 shadow-sm transition duration-300 hover:border-brand-300 hover:text-brand-700;
+      }
+
+      html[data-theme='dark'] .btn-secondary {
+        @apply border-slate-700 bg-slate-900/80 text-slate-100 hover:border-brand-500 hover:text-white;
+      }
+
+      .theme-toggle,
+      .contact-method,
+      .project-card,
+      .snapshot-card,
+      .recruiter-note,
+      .contact-form-card {
+        @apply rounded-3xl border border-slate-200/80 bg-white/85 shadow-soft backdrop-blur-sm;
+      }
+
+      html[data-theme='dark'] .theme-toggle,
+      html[data-theme='dark'] .contact-method,
+      html[data-theme='dark'] .project-card,
+      html[data-theme='dark'] .snapshot-card,
+      html[data-theme='dark'] .recruiter-note,
+      html[data-theme='dark'] .contact-form-card {
+        @apply border-slate-700/80 bg-slate-900/80 shadow-none;
+      }
+
+      .priority-badge,
+      .project-rank,
+      .hero-keywords span,
+      .recruiter-tags span,
+      .tech-tag {
+        @apply inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50/90 px-4 py-2 text-sm font-semibold text-brand-700;
+      }
+
+      html[data-theme='dark'] .priority-badge,
+      html[data-theme='dark'] .project-rank,
+      html[data-theme='dark'] .hero-keywords span,
+      html[data-theme='dark'] .recruiter-tags span,
+      html[data-theme='dark'] .tech-tag {
+        @apply border-brand-500/30 bg-brand-500/10 text-brand-100;
+      }
+
+      .section-tag {
+        @apply inline-flex items-center rounded-full border border-brand-200 bg-brand-50 px-4 py-2 text-xs font-bold uppercase tracking-[0.24em] text-brand-700;
+      }
+
+      html[data-theme='dark'] .section-tag {
+        @apply border-brand-500/30 bg-brand-500/10 text-brand-100;
+      }
+    }
+  </style>
 
   <style>
     .sr-only {
