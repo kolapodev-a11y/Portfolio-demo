@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kolapo Victor | Frontend &amp; Full-Stack Web Developer | React, Node.js, JavaScript Portfolio</title>
   <meta name="description" content="Kolapo Victor is a frontend and full-stack web developer building responsive websites and modern web applications with React, JavaScript, Node.js, Express, MongoDB, HTML, CSS, and SQL." />
   <meta name="keywords" content="Kolapo Victor, Peezutech, frontend developer, full-stack web developer, React developer, JavaScript developer, Node.js developer, Express, MongoDB, SQL, HTML, CSS, responsive web design, accessibility, web portfolio" />
+  <meta name="author" content="Kolapo Victor" />
+  <meta name="creator" content="Peezutech" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#2563eb" />
   <meta name="color-scheme" content="light dark" />
@@ -42,7 +44,8 @@
 
     .hero-summary-list,
     .quick-list,
-    .project-highlights {
+    .project-highlights,
+    .recruiter-checklist {
       margin: 1rem 0 0;
       padding-left: 1.1rem;
       display: grid;
@@ -51,7 +54,8 @@
 
     .hero-summary-list li,
     .quick-list li,
-    .project-highlights li {
+    .project-highlights li,
+    .recruiter-checklist li {
       line-height: 1.6;
     }
 
@@ -66,7 +70,8 @@
 
     .hero-keywords span,
     .recruiter-tags span,
-    .priority-badge {
+    .priority-badge,
+    .project-rank {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -138,7 +143,8 @@
       margin-bottom: 0.9rem;
     }
 
-    .project-body .priority-badge {
+    .project-body .priority-badge,
+    .project-body .project-rank {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -150,6 +156,16 @@
       margin-right: auto;
       text-align: center;
       line-height: 1.7;
+    }
+
+    .ats-summary {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.25rem 2rem;
+    }
+
+    .recruiter-note strong {
+      color: inherit;
     }
 
     @media (max-width: 768px) {
@@ -205,7 +221,7 @@
         },
         {
           "@type": "ItemList",
-          "name": "Portfolio Projects",
+          "name": "Portfolio Projects Ordered by Priority",
           "itemListElement": [
             {
               "@type": "ListItem",
@@ -224,6 +240,17 @@
               "position": 2,
               "item": {
                 "@type": "SoftwareApplication",
+                "name": "Fortunehub's Hub E-commerce Website",
+                "applicationCategory": "E-commerce Web Application",
+                "url": "https://fortunehub.name.ng",
+                "description": "Full-stack e-commerce website for the Nigerian market with manual payment verification, admin approval workflow, email notifications, SEO optimization, and responsive design."
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "SoftwareApplication",
                 "name": "Landing Page Website",
                 "applicationCategory": "Marketing Website",
                 "url": "https://landing-page-demo-mu-six.vercel.app/",
@@ -233,24 +260,13 @@
             },
             {
               "@type": "ListItem",
-              "position": 3,
+              "position": 4,
               "item": {
                 "@type": "SoftwareApplication",
                 "name": "Quiz Website",
                 "applicationCategory": "Education Web Application",
                 "url": "https://koleepeezuquiz.name.ng",
                 "description": "Interactive JavaScript quiz application with timed sessions, multi-subject modes, and exam simulation flows."
-              }
-            },
-            {
-              "@type": "ListItem",
-              "position": 4,
-              "item": {
-                "@type": "SoftwareApplication",
-                "name": "E-commerce Website",
-                "applicationCategory": "E-commerce Website",
-                "url": "https://fortunehub.name.ng",
-                "description": "Responsive storefront experience for electronics with category organization, featured products, and shopping-oriented UI design."
               }
             },
             {
@@ -349,7 +365,9 @@
           <h2 class="hero-subtitle">
             <span id="typed-text">Frontend &amp; Full-Stack Web Developer</span>
             <span class="typed-cursor">|</span>
-          </h2><p class="hero-description">
+          </h2>
+
+          <p class="hero-description">
             I build responsive, accessible, and modern web products with <strong>React</strong>,
             <strong>JavaScript</strong>, <strong>Node.js</strong>, <strong>Express</strong>,
             <strong>MongoDB</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>SQL</strong>.
@@ -357,9 +375,9 @@
           </p>
 
           <ul class="hero-summary-list" aria-label="Professional highlights">
-            <li>Built live projects covering full-stack marketplace workflows, marketing pages, e-commerce UI, and interactive education products.</li>
-            <li>Strong in semantic HTML, responsive web design, accessibility, and modern frontend implementation.</li>
-            <li>Comfortable shipping both polished user interfaces and backend-powered application features.</li>
+            <li>Built live projects across marketplace, e-commerce, SaaS marketing, portfolio, and education use cases.</li>
+            <li>Strong in semantic HTML, responsive web design, accessibility, modern JavaScript, and user-focused interfaces.</li>
+            <li>Comfortable building both polished frontends and backend-supported product workflows.</li>
           </ul>
 
           <div class="hero-keywords" aria-label="Core keyword highlights">
@@ -371,9 +389,16 @@
             <span>Accessibility</span>
           </div>
 
+          <div class="recruiter-tags" aria-label="Target role keywords">
+            <span>Frontend Developer</span>
+            <span>Full-Stack Developer</span>
+            <span>React Developer</span>
+            <span>JavaScript Developer</span>
+          </div>
+
           <div class="hero-buttons">
             <a href="#projects" class="btn-primary" data-scroll>🚀 View Projects</a>
-            <a href="/cdn-cgi/l/email-protection#03686c6f62736c67667543646e626a6f2d606c6e" class="btn-secondary">💬 Email Me</a>
+            <a href="/cdn-cgi/l/email-protection#dcb7b3b0bdacb3b8b9aa9cbbb1bdb5b0f2bfb3b1" class="btn-secondary">💬 Email Me</a>
           </div>
         </div>
 
@@ -398,7 +423,7 @@
         <div class="section-tag">Quick Overview</div>
         <h2 id="snapshot-title" class="section-title">What I <span>Bring</span></h2>
         <p class="section-copy">
-          This section gives a quick overview of my focus areas, technical strengths, and the kinds of products I build.
+          This section gives a clear recruiter-friendly overview of my target roles, technical strengths, and the products I build best.
         </p>
       </div>
 
@@ -414,8 +439,8 @@
         </article>
 
         <article class="snapshot-card reveal">
-          <h3>What I Build</h3>
-          <p>Marketing websites, portfolios, e-commerce interfaces, learning applications, and full-stack marketplace products.</p>
+          <h3>Best Fit Projects</h3>
+          <p>Marketplace products, e-commerce platforms, marketing websites, portfolios, and interactive learning applications.</p>
         </article>
       </div>
     </section>
@@ -480,18 +505,52 @@
           </div>
         </div>
       </div>
+
+      <div class="ats-summary">
+        <article class="recruiter-note reveal" aria-labelledby="recruiter-summary-title">
+          <h3 id="recruiter-summary-title">Recruiter Summary</h3>
+          <p>
+            I am best positioned for roles that value strong frontend execution, responsive user interfaces,
+            accessibility awareness, and the ability to contribute to full-stack product delivery.
+          </p>
+          <ul class="recruiter-checklist" aria-label="Recruiter summary points">
+            <li><strong>Best evidence:</strong> live marketplace and e-commerce work with real product flows</li>
+            <li><strong>Frontend strengths:</strong> React, JavaScript, responsive layouts, semantic HTML, polished UI</li>
+            <li><strong>Full-stack strengths:</strong> Node.js, Express, MongoDB, authentication, messaging, and workflow-driven features</li>
+          </ul>
+          <div class="recruiter-tags" aria-label="Recruiter quick tags">
+            <span>ATS Friendly</span>
+            <span>Recruiter Ready</span>
+            <span>Accessible Portfolio</span>
+            <span>Project Priority Ordered</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section class="sr-only" aria-label="ATS Resume Summary">
+      <h2>Professional Summary</h2>
+      <p>Kolapo Victor is a frontend and full-stack web developer with experience building responsive websites and modern web applications using React, JavaScript, Node.js, Express, MongoDB, HTML, CSS, and SQL.</p>
+      <h2>Target Roles</h2>
+      <p>Frontend Developer, Full-Stack Web Developer, React Developer, JavaScript Developer.</p>
+      <h2>Technical Skills</h2>
+      <p>React, Vite, JavaScript, HTML5, CSS3, Node.js, Express, MongoDB, SQL, responsive web design, accessibility, semantic HTML, product UI, API integration.</p>
+      <h2>Priority Projects</h2>
+      <p>PeezuHub full-stack marketplace, Fortunehub's Hub e-commerce website, Landing Page Website, Quiz Website, Portfolio Website, Blog Website.</p>
+      <h2>Contact</h2>
+      <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f0400030e1f000b0a192f08020e0603410c0002">[email&#160;protected]</a>. GitHub: https://github.com/kolapodev-a11y. LinkedIn: https://www.linkedin.com/in/kolapo-ofobutu-b68892382. WhatsApp: https://wa.me/2349050911921.</p>
+    </section>
+
+    <section id="projects" class="projects" aria-labelledby="projects-title">
       <div class="projects-container">
         <div class="section-header reveal">
           <div class="section-tag">Selected Work</div>
-          <h2 class="section-title">Featured <span>Projects</span></h2>
+          <h2 id="projects-title" class="section-title">Featured <span>Projects</span></h2>
           <p class="section-copy">
-            These projects highlight technical depth, visible product execution, and the range of work I have built across frontend and full-stack development.
+            These projects are intentionally ordered by hiring priority so recruiters and hiring managers see the strongest product work first.
           </p>
           <p class="projects-priority-copy">
-            Explore a mix of full-stack applications, marketing sites, e-commerce interfaces, and interactive learning products.
+            Priority is based on technical depth, full-stack ownership, business relevance, and how strongly each project supports frontend or full-stack hiring decisions.
           </p>
         </div>
 
@@ -509,6 +568,7 @@
             </div>
             <div class="project-body">
               <div class="project-meta">
+                <span class="project-rank">Priority 1</span>
                 <span class="priority-badge">Full-Stack Marketplace</span>
               </div>
               <h3>PeezuHub</h3>
@@ -516,7 +576,7 @@
                 A full-stack Nigerian marketplace web application built with <strong>React</strong>,
                 <strong>Vite</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and
                 <strong>MongoDB</strong>. It includes authentication, Google sign-in, listing management,
-                search and browsing by state/category, messaging, notifications, image uploads, and premium payment workflows.
+                search and browsing by state and category, messaging, notifications, image uploads, and premium payment workflows.
               </p>
               <ul class="project-highlights" aria-label="PeezuHub highlights">
                 <li>Best example of end-to-end product thinking and full-stack ownership</li>
@@ -533,6 +593,40 @@
 
           <article class="project-card reveal">
             <div class="project-image-wrapper">
+              <img src="images/optimized/ecomm.webp" alt="Fortunehub's Hub E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="high" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+              <div class="project-overlay">
+                <div class="overlay-links">
+                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
+                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-rank">Priority 2</span>
+                <span class="priority-badge">Full-Stack E-commerce</span>
+              </div>
+              <h3>Fortunehub's Hub E-commerce Website</h3>
+              <p>
+                Built a full-stack e-commerce platform for the Nigerian market using <strong>HTML</strong>,
+                <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>Node.js</strong>, and <strong>MongoDB</strong>.
+                It includes manual payment verification, receipt upload handling, admin approval workflows,
+                automated email notifications with Resend, SEO optimization, and responsive mobile-first design.
+              </p>
+              <ul class="project-highlights" aria-label="Fortunehub highlights">
+                <li>Shows business-focused product thinking with payment and admin workflow support</li>
+                <li>Strong proof of practical frontend and backend execution for commerce use cases</li>
+              </ul>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">MongoDB</span><span class="tech-tag">E-commerce</span></div>
+              <div class="project-links-row">
+                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-image-wrapper">
               <img src="images/optimized/land.webp" alt="Landing Page Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
               <div class="project-overlay">
                 <div class="overlay-links">
@@ -543,6 +637,7 @@
             </div>
             <div class="project-body">
               <div class="project-meta">
+                <span class="project-rank">Priority 3</span>
                 <span class="priority-badge">Frontend Marketing Site</span>
               </div>
               <h3>Landing Page Website</h3>
@@ -573,31 +668,24 @@
                 </div>
               </div>
             </div>
-            
-
-          <article class="project-card reveal">
-            <div class="project-image-wrapper">
-              <img src="images/optimized/ecomm.webp" alt="E-commerce Website project preview" width="640" height="640" loading="lazy" decoding="async" fetchpriority="low" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
-              <div class="project-overlay">
-                <div class="overlay-links">
-                  <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="overlay-btn live">🔗 Live Demo</a>
-                  <span class="overlay-btn overlay-btn--disabled github" aria-disabled="true">🔒 Private Repo</span>
-                </div>
-              </div>
-            </div>
             <div class="project-body">
               <div class="project-meta">
-                <span class="priority-badge">E-commerce Websites</span>
+                <span class="project-rank">Priority 4</span>
+                <span class="priority-badge">Interactive Learning App</span>
               </div>
-              <h3>Fortunehub's Hub E-commerce Website</h3>
-              <p>   Built a full-stack e-commerce platform for the Nigerian market using vanilla HTML, CSS, JavaScript, Node.js, and MongoDB. Developed a manual payment verification system where customers upload payment receipts and admins approve transactions via a dedicated dashboard, with automated email notifications powered by Resend. Implemented responsive, mobile-first design with SEO optimization and fast load times to improve customer reach and conversion across devices.  </p>
-              <ul class="project-highlights" aria-label="E-commerce Website highlights">
-                <li>Relevant to business teams looking for commerce-oriented frontend execution</li>
-                <li>Useful evidence of layout structure, browsing UX, and product presentation</li>
+              <h3>Quiz Website</h3>
+              <p>
+                An interactive exam practice web application built with <strong>HTML</strong>, <strong>CSS</strong>,
+                and <strong>JavaScript</strong>. It supports multi-subject and single-subject modes, timed sessions,
+                score-based interaction, and JAMB-style simulation flows for focused learning.
+              </p>
+              <ul class="project-highlights" aria-label="Quiz Website highlights">
+                <li>Shows application logic, state handling, and user-focused front-end interactions</li>
+                <li>Highlights ability to build functional learning products beyond static pages</li>
               </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">Responsive UI</span></div>
+              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">EdTech</span></div>
               <div class="project-links-row">
-                <a href="https://fortunehub.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
+                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
                 <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
               </div>
             </div>
@@ -615,6 +703,7 @@
             </div>
             <div class="project-body">
               <div class="project-meta">
+                <span class="project-rank">Priority 5</span>
                 <span class="priority-badge">Portfolio &amp; Accessibility</span>
               </div>
               <h3>Portfolio Website</h3>
@@ -646,6 +735,7 @@
             </div>
             <div class="project-body">
               <div class="project-meta">
+                <span class="project-rank">Priority 6</span>
                 <span class="priority-badge">Content Platform</span>
               </div>
               <h3>Blog Website</h3>
@@ -665,29 +755,6 @@
               </div>
             </div>
           </article>
-
-            <div class="project-body">
-              <div class="project-meta">
-                <span class="priority-badge">Interactive Learning App</span>
-              </div>
-              <h3>Quiz Website</h3>
-              <p>
-                An interactive exam practice web application built with <strong>HTML</strong>, <strong>CSS</strong>,
-                and <strong>JavaScript</strong>. It supports multi-subject and single-subject modes, timed sessions,
-                score-based interaction, and JAMB-style simulation flows for focused learning.
-              </p>
-              <ul class="project-highlights" aria-label="Quiz Website highlights">
-                <li>Shows application logic, state handling, and user-focused front-end interactions</li>
-                <li>Highlights ability to build functional learning products beyond static pages</li>
-              </ul>
-              <div class="tech-tags"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">EdTech</span></div>
-              <div class="project-links-row">
-                <a href="https://koleepeezuquiz.name.ng" target="_blank" rel="noopener noreferrer" class="project-link">🌐 Live Demo ↗</a>
-                <span class="project-link project-link--disabled" aria-disabled="true">🔒 Private Repo</span>
-              </div>
-            </div>
-          </article>
-          
         </div>
       </div>
     </section>
@@ -710,9 +777,9 @@
           </p>
 
           <div class="contact-methods">
-            <a href="/cdn-cgi/l/email-protection#3a5155565b4a555e5f4c7a5d575b535614595557" class="contact-method">
+            <a href="/cdn-cgi/l/email-protection#cfa4a0a3aebfa0abaab98fa8a2aea6a3e1aca0a2" class="contact-method">
               <div class="contact-method-icon">📧</div>
-              <div class="contact-method-text"><strong>Email</strong><span><span class="__cf_email__" data-cfemail="ed8682818c9d8289889bad8a808c8481c38e8280">[email&#160;protected]</span></span></div>
+              <div class="contact-method-text"><strong>Email</strong><span><span class="__cf_email__" data-cfemail="c7aca8aba6b7a8a3a2b187a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></span></div>
             </a>
             <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer" class="contact-method">
               <div class="contact-method-icon">💬</div>
@@ -769,8 +836,8 @@
       <div class="footer-bottom">
         <p>
           © <span id="current-year"></span> Portfolio by
-          <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer"> Peezutech</a>.
-          Built for speed, accessibility, and a clean browsing experience.
+          <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer">Peezutech</a>.
+          Built for speed, accessibility, and recruiter-friendly browsing.
         </p>
       </div>
     </div>
@@ -786,7 +853,7 @@
   </noscript>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script defer src="app.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
