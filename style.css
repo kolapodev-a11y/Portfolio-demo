@@ -581,6 +581,8 @@ html[data-theme="dark"] .mobile-menu a {
   font-size: 1.05rem;
   line-height: 1.9;
   margin-bottom: 1.5rem;
+  text-align: center;
+
 }
 
 .about-text-block p strong { color: var(--text); }
