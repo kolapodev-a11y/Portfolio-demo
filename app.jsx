@@ -5,7 +5,7 @@
 
 const { useState, useEffect, useRef } = React;
 
-// ── DATA ─────────────────────────────────────────────────────
+// ─── DATA ────────────────────────────────────────────────────
 const SKILLS = [
   { icon: "🌐", name: "HTML5", level: "Expert" },
   { icon: "🎨", name: "CSS3", level: "Expert" },
@@ -21,48 +21,43 @@ const PROJECTS = [
   {
     id: 1,
     title: "Landing Page Website",
-    description:
-      "A responsive business landing page website built with REACT, featuring modern design and smooth animations.",
-    tech: ["REACT"],
+    description: "A responsive business landing page website built with HTML, CSS, and JavaScript, featuring modern design and smooth animations.",
+    tech: ["HTML", "CSS", "JavaScript"],
     image: "images/land.jpg",
-    live: "https://landing-page-demo-mu-six.vercel.app/",
-    github: "https://github.com/victorkolapo84-code/Landing-page-demo",
+    live: "https://kpz-landing-page.netlify.app/",
+    github: "#",
   },
   {
     id: 2,
     title: "Portfolio Website",
-    description:
-      "A mobile-first portfolio website with interactive elements and optimized performance across all devices including a light and darkmode toggle option.",
-    tech: ["REACT"],
+    description: "A mobile-first portfolio website with interactive elements and optimized performance across all devices.",
+    tech: ["HTML", "CSS", "JavaScript"],
     image: "images/port.jpg",
-    live: "https://portfolio-demo-rosy-ten.vercel.app/",
-    github: "https://github.com/kolapodev-a11y/Portfolio-demo/tree/main",
+    live: "https://kpzmyportfolio.netlify.app/",
+    github: "#",
   },
   {
     id: 3,
     title: "E-commerce Website",
-    description:
-      "A fully functional e-commerce platform with product browsing, cart management, a streamlined checkout experience, and SEO optimization.",
+    description: "A fully functional e-commerce platform with product browsing, cart management, a streamlined checkout experience, and SEO optimization.",
     tech: ["HTML", "CSS", "JavaScript", "Node.js (Express)", "MongoDB", "Payment Integration"],
     image: "images/ecomm.jpg",
     live: "https://fortunehub.name.ng",
-    github: "#",
+    github: "https://www.linkedin.com/in/kolapo-ofobutu-b68892382",
   },
   {
     id: 4,
     title: "Blog Website",
-    description:
-      "A responsive blog website built with HTML, CSS, and JavaScript, featuring modern design and smooth navigation.",
+    description: "A responsive blog website built with HTML, CSS, and JavaScript, featuring modern design and smooth navigation.",
     tech: ["HTML", "CSS", "JavaScript"],
     image: "images/blog.jpg",
     live: "https://kpzblogwebsite.netlify.app/",
-    github: "https://github.com/victorkolapo84-code/My-Blog-site",
+    github: "#",
   },
   {
     id: 5,
     title: "Quiz Website",
-    description:
-      "An interactive quiz application designed to test knowledge with various categories and instant feedback.",
+    description: "An interactive quiz application designed to test knowledge with various categories and instant feedback.",
     tech: ["HTML", "CSS", "JavaScript"],
     image: "images/quiz.jpg",
     live: "https://koleepeezuquiz.name.ng",
@@ -70,25 +65,7 @@ const PROJECTS = [
   },
 ];
 
-// ── THEME HELPERS ────────────────────────────────────────────
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  try {
-    localStorage.setItem("theme", theme);
-  } catch (e) {}
-}
-
-function getInitialTheme() {
-  // Default to LIGHT to fix the “too dark/black” look.
-  try {
-    const saved = localStorage.getItem("theme");
-    return saved || "light";
-  } catch (e) {
-    return "light";
-  }
-}
-
-// ── TYPED TEXT HOOK ──────────────────────────────────────────
+// ─── TYPED TEXT HOOK ─────────────────────────────────────────
 function useTypedText(texts, speed = 80, pause = 1800) {
   const [display, setDisplay] = useState("");
   const [idx, setIdx] = useState(0);
@@ -99,14 +76,14 @@ function useTypedText(texts, speed = 80, pause = 1800) {
     const current = texts[idx];
     let timeout;
     if (!deleting && charIdx < current.length) {
-      timeout = setTimeout(() => setCharIdx((c) => c + 1), speed);
+      timeout = setTimeout(() => setCharIdx(c => c + 1), speed);
     } else if (!deleting && charIdx === current.length) {
       timeout = setTimeout(() => setDeleting(true), pause);
     } else if (deleting && charIdx > 0) {
-      timeout = setTimeout(() => setCharIdx((c) => c - 1), speed / 2);
+      timeout = setTimeout(() => setCharIdx(c => c - 1), speed / 2);
     } else if (deleting && charIdx === 0) {
       setDeleting(false);
-      setIdx((i) => (i + 1) % texts.length);
+      setIdx(i => (i + 1) % texts.length);
     }
     setDisplay(current.substring(0, charIdx));
     return () => clearTimeout(timeout);
@@ -115,20 +92,20 @@ function useTypedText(texts, speed = 80, pause = 1800) {
   return display;
 }
 
-// ── REVEAL ON SCROLL HOOK ────────────────────────────────────
+// ─── REVEAL ON SCROLL HOOK ───────────────────────────────────
 function useReveal() {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("visible")),
+      entries => entries.forEach(e => e.isIntersecting && e.target.classList.add("visible")),
       { threshold: 0.1 }
     );
-    els.forEach((el) => observer.observe(el));
+    els.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 }
 
-// ── TOAST ────────────────────────────────────────────────────
+// ─── TOAST ───────────────────────────────────────────────────
 function Toast({ message, type, onClose }) {
   useEffect(() => {
     const t = setTimeout(onClose, 4000);
@@ -143,27 +120,8 @@ function Toast({ message, type, onClose }) {
   );
 }
 
-// ── THEME TOGGLE UI ──────────────────────────────────────────
-function ThemeToggle({ theme, onToggle }) {
-  const isDark = theme === "dark";
-  return (
-    <button
-      className="theme-toggle"
-      onClick={onToggle}
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      title={isDark ? "Light mode" : "Dark mode"}
-      type="button"
-    >
-      <span className="theme-toggle-icon" aria-hidden="true">
-        {isDark ? "🌙" : "☀️"}
-      </span>
-      <span className="theme-toggle-text">{isDark ? "Dark" : "Light"}</span>
-    </button>
-  );
-}
-
-// ── NAVBAR ───────────────────────────────────────────────────
-function Navbar({ theme, onToggleTheme }) {
+// ─── NAVBAR ──────────────────────────────────────────────────
+function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
@@ -173,7 +131,7 @@ function Navbar({ theme, onToggleTheme }) {
       setScrolled(window.scrollY > 50);
       const sections = ["home", "about", "projects", "contact"];
       let current = "home";
-      sections.forEach((s) => {
+      sections.forEach(s => {
         const el = document.getElementById(s);
         if (el && window.scrollY >= el.offsetTop - 120) current = s;
       });
@@ -197,79 +155,41 @@ function Navbar({ theme, onToggleTheme }) {
           <span className="nav-logo" onClick={() => scrollTo("home")}>
             &lt;Peezutech /&gt;
           </span>
-
           <ul className="nav-links">
-            {links.map((l) => (
+            {links.map(l => (
               <li key={l}>
                 <a
                   href={`#${l}`}
                   className={activeSection === l ? "active" : ""}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollTo(l);
-                  }}
+                  onClick={e => { e.preventDefault(); scrollTo(l); }}
                 >
                   {l.charAt(0).toUpperCase() + l.slice(1)}
                 </a>
               </li>
             ))}
-
             <li>
               <a
                 href="#contact"
                 className="nav-cta"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo("contact");
-                }}
+                onClick={e => { e.preventDefault(); scrollTo("contact"); }}
               >
                 Hire Me
               </a>
             </li>
-
-            <li className="nav-theme">
-              <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-            </li>
           </ul>
-
-          <button
-            className={`hamburger${menuOpen ? " open" : ""}`}
-            onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Menu"
-            type="button"
-          >
-            <span />
-            <span />
-            <span />
+          <button className={`hamburger${menuOpen ? " open" : ""}`} onClick={() => setMenuOpen(o => !o)} aria-label="Menu">
+            <span /><span /><span />
           </button>
         </div>
       </nav>
 
       <div className={`mobile-menu${menuOpen ? " open" : ""}`}>
-        <div className="mobile-menu-top">
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
-        </div>
-
-        {links.map((l) => (
-          <a
-            key={l}
-            href={`#${l}`}
-            onClick={(e) => {
-              e.preventDefault();
-              scrollTo(l);
-            }}
-          >
+        {links.map(l => (
+          <a key={l} href={`#${l}`} onClick={e => { e.preventDefault(); scrollTo(l); }}>
             {l.charAt(0).toUpperCase() + l.slice(1)}
           </a>
         ))}
-        <a
-          href="#contact"
-          className="mobile-hire"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollTo("contact");
-          }}
-        >
+        <a href="#contact" style={{ color: "#60a5fa" }} onClick={e => { e.preventDefault(); scrollTo("contact"); }}>
           Hire Me →
         </a>
       </div>
@@ -277,14 +197,9 @@ function Navbar({ theme, onToggleTheme }) {
   );
 }
 
-// ── HERO ─────────────────────────────────────────────────────
+// ─── HERO ────────────────────────────────────────────────────
 function Hero() {
-  const typed = useTypedText([
-    "Fullstack Web Developer",
-    "React Developer",
-    "UI/UX Enthusiast",
-    "Problem Solver",
-  ]);
+  const typed = useTypedText(["Fullstack Web Developer", "React Developer", "UI/UX Enthusiast", "Problem Solver"]);
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
@@ -298,39 +213,29 @@ function Hero() {
             <span className="dot" />
             Available for new projects
           </div>
-
           <h1 className="hero-title">
-            Hello, I'm <span className="name">Kolapo Victor</span>
+            Hello, I'm{" "}
+            <span className="name">Kolapo Victor</span>
           </h1>
-
           <h2 className="hero-subtitle">
-            {typed}
-            <span className="typed-cursor">|</span>
+            {typed}<span className="typed-cursor">|</span>
           </h2>
-
           <p className="hero-description">
-            I create beautiful, responsive websites and web applications that bring ideas to life —
-            with clean code and modern design.
+            I create beautiful, responsive websites and web applications
+            that bring ideas to life — with clean code and modern design.
           </p>
-
           <div className="hero-buttons">
             <a
               href="#projects"
               className="btn-primary"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("projects");
-              }}
+              onClick={e => { e.preventDefault(); scrollTo("projects"); }}
             >
               🚀 View My Work
             </a>
             <a
               href="#contact"
               className="btn-secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("contact");
-              }}
+              onClick={e => { e.preventDefault(); scrollTo("contact"); }}
             >
               💬 Get In Touch
             </a>
@@ -340,15 +245,9 @@ function Hero() {
         <div className="hero-visual">
           <div className="profile-ring">
             <div className="profile-inner">👨‍💻</div>
-            <div className="floating-badge badge-1">
-              ⚛️ <strong>React</strong>
-            </div>
-            <div className="floating-badge badge-2">
-              🟢 <strong>Node.js</strong>
-            </div>
-            <div className="floating-badge badge-3">
-              🌐 <strong>Fullstack</strong>
-            </div>
+            <div className="floating-badge badge-1">⚛️ <strong>React</strong></div>
+            <div className="floating-badge badge-2">🟢 <strong>Node.js</strong></div>
+            <div className="floating-badge badge-3">🌐 <strong>Fullstack</strong></div>
           </div>
         </div>
       </div>
@@ -361,35 +260,31 @@ function Hero() {
   );
 }
 
-// ── ABOUT ────────────────────────────────────────────────────
+// ─── ABOUT ───────────────────────────────────────────────────
 function About() {
   useReveal();
   return (
     <section id="about" className="about">
       <div className="section-header reveal">
         <div className="section-tag">Who I Am</div>
-        <h2 className="section-title">
-          About <span>Me</span>
-        </h2>
+        <h2 className="section-title">About <span>Me</span></h2>
       </div>
-
       <div className="about-grid">
         <div className="about-text-block reveal">
           <p>
-            I'm a <strong>passionate web developer</strong> with hands-on experience building modern,
-            responsive websites and full-stack web applications. I love turning complex problems into
-            simple, beautiful designs.
+            I'm a <strong>passionate web developer</strong> with hands-on experience
+            building modern, responsive websites and full-stack web applications.
+            I love turning complex problems into simple, beautiful designs.
           </p>
           <p>
-            From crafting pixel-perfect UIs with <strong>React</strong>, HTML and CSS, to building robust
-            backends with <strong>Node.js & MongoDB/SQL</strong> — I handle the full development cycle
-            with attention to performance and user experience.
+            From crafting pixel-perfect UIs with <strong>React</strong> and CSS, to
+            building robust backends with <strong>Node.js & MongoDB</strong> — I handle
+            the full development cycle with attention to performance and user experience.
           </p>
           <p>
-            When I'm not coding, I'm learning new technologies and pushing the boundaries of what's
-            possible on the web.
+            When I'm not coding, I'm learning new technologies and pushing the boundaries
+            of what's possible on the web.
           </p>
-
           <div className="stats-row">
             <div className="stat-card">
               <span className="stat-number">5+</span>
@@ -409,7 +304,7 @@ function About() {
         <div className="skills-block reveal">
           <h3>🛠 Tech Stack & Skills</h3>
           <div className="skills-grid">
-            {SKILLS.map((skill) => (
+            {SKILLS.map(skill => (
               <div className="skill-item" key={skill.name}>
                 <span className="skill-icon">{skill.icon}</span>
                 <div className="skill-info">
@@ -425,16 +320,14 @@ function About() {
   );
 }
 
-// ── PROJECTS ─────────────────────────────────────────────────
+// ─── PROJECTS ────────────────────────────────────────────────
 function Projects() {
   return (
     <section id="projects" className="projects">
       <div className="projects-container">
         <div className="section-header reveal">
           <div className="section-tag">My Work</div>
-          <h2 className="section-title">
-            Featured <span>Projects</span>
-          </h2>
+          <h2 className="section-title">Featured <span>Projects</span></h2>
         </div>
         <div className="projects-grid">
           {PROJECTS.map((project, i) => (
@@ -452,7 +345,7 @@ function ProjectCard({ project, delay }) {
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (entries[0].isIntersecting) {
           setTimeout(() => el.classList.add("visible"), delay);
           observer.disconnect();
@@ -479,19 +372,14 @@ function ProjectCard({ project, delay }) {
           </div>
         </div>
       </div>
-
       <div className="project-body">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
-
         <div className="tech-tags">
-          {project.tech.map((t) => (
-            <span key={t} className="tech-tag">
-              {t}
-            </span>
+          {project.tech.map(t => (
+            <span key={t} className="tech-tag">{t}</span>
           ))}
         </div>
-
         <div className="project-links-row">
           <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
             🌐 Live Demo ↗
@@ -505,53 +393,31 @@ function ProjectCard({ project, delay }) {
   );
 }
 
-// ── CONTACT ──────────────────────────────────────────────────
+// ─── CONTACT ─────────────────────────────────────────────────
 function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
   const [toast, setToast] = useState(null);
 
-  const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
     try {
-      // Resend (server-side) via Vercel Serverless Function: /api/contact
-      // NOTE: This won't work on file:// (open index.html directly). Use Live Server or deploy to Vercel.
-      const resp = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-        }),
+      // EmailJS integration — same keys as the original site
+      emailjs.init({ publicKey: "Gkisq4GSHGj4nx1rh" });
+      await emailjs.send("service_id", "template_id", {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
       });
-
-      if (!resp.ok) {
-        // Try to surface a useful error message from the API
-        let msg = "Failed to send message.";
-        try {
-          const data = await resp.json();
-          if (data?.error) msg = data.error;
-        } catch (e) {}
-        throw new Error(msg);
-      }
-
       setToast({ message: "Message sent! I'll get back to you soon. 🎉", type: "success" });
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       // Fallback: open mailto
-      const fallbackEmail = "kolapodev@gmail.com";
-      window.location.href = `mailto:${fallbackEmail}?subject=${encodeURIComponent(
-        `Message from ${form.name}`
-      )}&body=${encodeURIComponent(form.message)}`;
-
-      setToast({
-        message: "Couldn't send automatically — opening email client as fallback...",
-        type: "error",
-      });
+      window.location.href = `mailto:kolapodev@gmail.com?subject=Message from ${encodeURIComponent(form.name)}&body=${encodeURIComponent(form.message)}`;
+      setToast({ message: "Opening email client as fallback...", type: "success" });
     } finally {
       setSending(false);
     }
@@ -588,21 +454,19 @@ function Contact() {
     <section id="contact" className="contact">
       <div className="section-header reveal">
         <div className="section-tag">Say Hello</div>
-        <h2 className="section-title">
-          Get In <span>Touch</span>
-        </h2>
+        <h2 className="section-title">Get In <span>Touch</span></h2>
       </div>
 
       <div className="contact-container">
+        {/* Info */}
         <div className="contact-info reveal">
           <h3>Let's Work Together 🤝</h3>
           <p>
-            I'm always interested in new opportunities and exciting projects. Whether you have a
-            question, a project in mind, or just want to say hi — feel free to reach out!
+            I'm always interested in new opportunities and exciting projects.
+            Whether you have a question, a project in mind, or just want to say hi — feel free to reach out!
           </p>
-
           <div className="contact-methods">
-            {CONTACT_METHODS.map((m) => (
+            {CONTACT_METHODS.map(m => (
               <a key={m.label} href={m.href} target="_blank" rel="noopener noreferrer" className="contact-method">
                 <div className="contact-method-icon">{m.icon}</div>
                 <div className="contact-method-text">
@@ -614,47 +478,40 @@ function Contact() {
           </div>
         </div>
 
+        {/* Form */}
         <div className="contact-form-card reveal">
           <h3>Send a Message 💌</h3>
           <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Your Name</label>
               <input
-                id="name"
-                name="name"
-                type="text"
+                id="name" name="name" type="text"
                 placeholder="e.g. John Doe"
                 value={form.name}
                 onChange={handleChange}
                 required
               />
             </div>
-
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
               <input
-                id="email"
-                name="email"
-                type="email"
+                id="email" name="email" type="email"
                 placeholder="e.g. john@example.com"
                 value={form.email}
                 onChange={handleChange}
                 required
               />
             </div>
-
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
-                id="message"
-                name="message"
+                id="message" name="message"
                 placeholder="Tell me about your project..."
                 value={form.message}
                 onChange={handleChange}
                 required
               />
             </div>
-
             <button type="submit" className="form-submit-btn" disabled={sending}>
               {sending ? "⏳ Sending..." : "🚀 Send Message"}
             </button>
@@ -662,12 +519,18 @@ function Contact() {
         </div>
       </div>
 
-      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
     </section>
   );
 }
 
-// ── FOOTER ───────────────────────────────────────────────────
+// ─── FOOTER ──────────────────────────────────────────────────
 function Footer() {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   const year = new Date().getFullYear();
@@ -678,15 +541,8 @@ function Footer() {
         <div className="footer-top">
           <span className="footer-logo">&lt;Peezutech /&gt;</span>
           <nav className="footer-links">
-            {["home", "about", "projects", "contact"].map((s) => (
-              <a
-                key={s}
-                href={`#${s}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollTo(s);
-                }}
-              >
+            {["home", "about", "projects", "contact"].map(s => (
+              <a key={s} href={`#${s}`} onClick={e => { e.preventDefault(); scrollTo(s); }}>
                 {s.charAt(0).toUpperCase() + s.slice(1)}
               </a>
             ))}
@@ -694,11 +550,8 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <p>
-            © {year} Portfolio by{" "}
-            <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer">
-              Peezutech
-            </a>
-            . &nbsp;Built with <span className="footer-accent">⚛️ React</span> &amp; ❤️
+            &copy; {year} Portfolio by <a href="https://wa.me/2349050911921" target="_blank" rel="noopener noreferrer">Peezutech</a>.
+            &nbsp;Built with <span style={{ color: "#60a5fa" }}>⚛️ React</span> &amp; ❤️
           </p>
         </div>
       </div>
@@ -706,7 +559,7 @@ function Footer() {
   );
 }
 
-// ── BACK TO TOP ──────────────────────────────────────────────
+// ─── BACK TO TOP ─────────────────────────────────────────────
 function BackToTop() {
   const [visible, setVisible] = useState(false);
 
@@ -721,28 +574,39 @@ function BackToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="back-to-top"
+      style={{
+        position: "fixed",
+        bottom: "2rem",
+        left: "2rem",
+        width: "44px",
+        height: "44px",
+        background: "linear-gradient(135deg, #2563eb, #7c3aed)",
+        border: "none",
+        borderRadius: "50%",
+        color: "white",
+        fontSize: "1.2rem",
+        cursor: "pointer",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 20px rgba(37,99,235,0.4)",
+        zIndex: 999,
+        transition: "transform 0.2s",
+      }}
+      onMouseOver={e => e.target.style.transform = "translateY(-3px)"}
+      onMouseOut={e => e.target.style.transform = "none"}
       aria-label="Back to top"
-      type="button"
     >
       ↑
     </button>
   );
 }
 
-// ── APP ROOT ─────────────────────────────────────────────────
+// ─── APP ROOT ────────────────────────────────────────────────
 function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
-
-  useEffect(() => {
-    applyTheme(theme);
-  }, [theme]);
-
-  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
-
   return (
     <>
-      <Navbar theme={theme} onToggleTheme={toggleTheme} />
+      <Navbar />
       <main>
         <Hero />
         <About />
@@ -755,6 +619,6 @@ function App() {
   );
 }
 
-// ── MOUNT ────────────────────────────────────────────────────
+// ─── MOUNT ───────────────────────────────────────────────────
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
