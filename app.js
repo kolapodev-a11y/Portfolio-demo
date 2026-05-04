@@ -23,8 +23,8 @@
 
   const typedWords = [
     'Fullstack Web Developer',
-    'React Developer',
-    'UI/UX Enthusiast',
+    'MERN Stack Developer',
+    'React & Tailwind Builder',
     'Problem Solver'
   ];
 
