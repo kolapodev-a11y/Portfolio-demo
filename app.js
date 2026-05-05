@@ -22,10 +22,10 @@
     .filter((node) => node.closest('.nav-links, .mobile-menu, .footer-links'));
 
   const typedWords = [
-    'Fullstack Web Developer',
-    'MERN Stack Developer',
-    'React & Tailwind Builder',
-    'Problem Solver'
+    'React Frontend Developer',
+    'Responsive UI Builder',
+    'JavaScript & API Integrator',
+    'Frontend Problem Solver'
   ];
 
   let typedWordIndex = 0;
